@@ -37,7 +37,7 @@ public class TongYiController {
     }
 
     @GetMapping("/textToSpeech")
-    public String textToSpeech(@RequestParam(value = "message", defaultValue = "我现在心情很高兴，请创作一首2分钟的钢琴曲") String message) {
+    public String textToSpeech(@RequestParam(value = "message", defaultValue = "你好呀！认识你非常高兴，Nice to meet you！") String message) {
         log.info("通义千问 问题 = {}", message);
         return tongYiAudioService.genAudio(message);
     }

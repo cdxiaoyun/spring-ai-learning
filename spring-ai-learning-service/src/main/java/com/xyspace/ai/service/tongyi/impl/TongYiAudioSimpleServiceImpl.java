@@ -43,6 +43,9 @@ public class TongYiAudioSimpleServiceImpl extends AbstractTongYiServiceImpl {
         String fileUrl = System.getProperty("user.dir") + "/example." + value;
         log.info("file url = {}", fileUrl);
         File file = new File(fileUrl); // 指定文件路径和名称
+        if (file.exists()) {
+            file.delete();
+        }
         try (FileOutputStream fos = new FileOutputStream(file)) { // 创建FileOutputStream
             fos.getChannel().write(resWAV); // 将ByteBuffer中的数据写入文件
             fos.flush(); // 确保所有数据都被写入文件

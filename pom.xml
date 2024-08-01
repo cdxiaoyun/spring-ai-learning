@@ -7,11 +7,21 @@
     <groupId>com.xyspace.ai</groupId>
     <artifactId>spring-ai-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <modules>
+        <module>spring-ai-learning-boot</module>
+        <module>spring-ai-learning-domain</module>
+        <module>spring-ai-learning-service</module>
+        <module>spring-ai-learning-common</module>
+        <module>spring-ai-learning-web</module>
+        <module>spring-ai-learning-dao</module>
+    </modules>
 
 </project>

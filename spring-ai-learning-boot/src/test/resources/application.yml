@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    ai:
+      tongyi:
+        api-key: sk-6d526f72762d47658c9813de83ff7e52

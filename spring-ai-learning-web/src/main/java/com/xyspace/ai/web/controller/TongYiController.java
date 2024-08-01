@@ -20,6 +20,9 @@ public class TongYiController {
     @Qualifier("tongYiImagesServiceImpl")
     private TongYiService tongYiImagesService;
 
+    @Autowired
+    @Qualifier("tongYiAudioSimpleServiceImpl")
+    private TongYiService tongYiAudioService;
     @GetMapping("/simple")
     public String completion(@RequestParam(value = "message", defaultValue = "AI时代下Java开发者该何去何从？") String message) {
         log.info("通义千问 问题 = {}", message);
@@ -31,5 +34,11 @@ public class TongYiController {
     public String textToImg(@RequestParam(value = "message", defaultValue = "小孩在夕阳下牵着一条狗") String message) {
         log.info("通义千问 问题 = {}", message);
         return tongYiImagesService.genImg(message).getResult().getOutput().getUrl();
+    }
+
+    @GetMapping("/textToSpeech")
+    public String textToSpeech(@RequestParam(value = "message", defaultValue = "我现在心情很高兴，请创作一首2分钟的钢琴曲") String message) {
+        log.info("通义千问 问题 = {}", message);
+        return tongYiAudioService.genAudio(message);
     }
 }

@@ -1,6 +1,15 @@
 spring:
+  application:
+    name: Spring AI
   cloud:
     ai:
       tongyi:
         api-key: sk-6d526f72762d47658c9813de83ff7e52
         model: qwen-long
+  ai:
+    openai:
+      api_key: sk-GARtip6QP6G7V08eUq7rP4ZzGTtgJoec2G90p7lPQ47t8fsK
+      base-url: https://api.openai.com
+      chat:
+        options:
+          model: gpt-3.5-turbo

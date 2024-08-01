@@ -1,5 +1,6 @@
 package com.xyspace.ai.web.controller;
 
+import com.xyspace.ai.service.gpt.ChatGptService;
 import com.xyspace.ai.service.tongyi.TongYiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.image.ImageResponse;
@@ -23,10 +24,20 @@ public class TongYiController {
     @Autowired
     @Qualifier("tongYiAudioSimpleServiceImpl")
     private TongYiService tongYiAudioService;
+
+    @Autowired
+    private ChatGptService chatGptService;
+
     @GetMapping("/simple")
     public String completion(@RequestParam(value = "message", defaultValue = "AI时代下Java开发者该何去何从？") String message) {
         log.info("通义千问 问题 = {}", message);
         return tongYiSimpleService.completion(message);
+    }
+
+    @GetMapping("/simpleGpt")
+    public String completionGpt(@RequestParam(value = "message", defaultValue = "AI时代下Java开发者该何去何从？") String message) {
+        log.info("chatgpt 问题 = {}", message);
+        return chatGptService.completion(message);
     }
 
 

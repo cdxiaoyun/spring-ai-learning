@@ -14,12 +14,7 @@ public class ChatGptServiceImpl implements ChatGptService {
 
     @Autowired
     @Qualifier("openAiChatClient")
-    private final ChatClient openAiChatClient;
-
-    @Autowired
-    public ChatGptServiceImpl(ChatClient chatClient) {
-        this.openAiChatClient = chatClient;
-    }
+    private ChatClient openAiChatClient;
 
     @Override
     public String completion(String message) {

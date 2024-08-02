@@ -21,9 +21,6 @@ public class TongYiSimpleServiceImpl extends AbstractTongYiServiceImpl {
     @Qualifier("tongYiChatClient")
     private ChatClient tongYiChatClient;
 
-    @Autowired
-    private StreamingChatClient streamingChatClient;
-
     /**
      * 具体实现：
      */

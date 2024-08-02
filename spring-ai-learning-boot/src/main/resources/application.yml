@@ -9,7 +9,7 @@ spring:
   ai:
     openai:
       api_key: sk-GARtip6QP6G7V08eUq7rP4ZzGTtgJoec2G90p7lPQ47t8fsK
-      base-url: https://api.openai.com
+      base-url: https://api.openai.com/v1/chat/completions
       chat:
         options:
           model: gpt-3.5-turbo
